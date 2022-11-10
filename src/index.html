@@ -10,8 +10,48 @@
 </head>
 <body>
     <script src="index.js"></script>
-
-    <div class="container"></div>
+    <div class="container">
+        <h1>Szobrok Összesen:</h1>
+        <div class="row">
+            <div class="col-md-3">
+                <p>Darab:</p>
+                <output id="db">0</output>
+                <p>Ára összesen:</p>
+                <output id="osszar">0</output>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Szobor felvétele</h2>
+        <form>
+        <div class="row">
+            <div class="col-md-3">
+            <input type="text" name="title" id="title" placeholder="Mű neve">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+                <input type="number" name="year" id="year" placeholder="Készitési év">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+                <input type="number" name="price" id="price" placeholder="Ára">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+                <input type="number" name="height" id="height" placeholder="Magassága a szobornak">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <button type="button" class="btn btn-primary" id="felvesz">Felvétel</button>
+    </div>
+</form>
     
 </body>
 </html>
