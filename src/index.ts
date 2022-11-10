@@ -1,5 +1,6 @@
 import { Artwork } from "./Artwork_Interface";
 import { Statue } from "./Statue";
+require('./style.css')
 
 let artworklist : Artwork[] = [];
 let title = (document.getElementById('title') as HTMLInputElement);
@@ -49,6 +50,19 @@ function checkAll(){
     }
     else{
         errorarea.textContent = "";
-        if
+        if(!titlecheck(title.value)){
+            errorarea.textContent = "Hibás a cím";
+        }
+        else if(yearcheck(parseInt(year.value))){
+            errorarea.textContent = "Nem lehet jövöbeli évet megadni";
+        }
+        else if(pricecheck(parseInt(price.value))){
+            errorarea.textContent = "Nem lehet 1 FT-nál kevesebbért adni";
+        }
+        else if(heightcheck(parseInt(height.value))){
+            errorarea.textContent = "Nem lehet 20 cm-nél kisebb a szobor";
+        }
     }
 }
+
+document.getElementById('submit')?.addEventListener('click', checkAll)

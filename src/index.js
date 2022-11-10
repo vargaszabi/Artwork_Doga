@@ -1,6 +1,8 @@
 "use strict";
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const Statue_1 = require("./Statue");
+require('./style.css');
 let artworklist = [];
 let title = document.getElementById('title');
 let year = document.getElementById('year');
@@ -42,7 +44,18 @@ function checkAll() {
     }
     else {
         errorarea.textContent = "";
-        if ()
-            ;
+        if (!titlecheck(title.value)) {
+            errorarea.textContent = "Hibás a cím";
+        }
+        else if (yearcheck(parseInt(year.value))) {
+            errorarea.textContent = "Nem lehet jövöbeli évet megadni";
+        }
+        else if (pricecheck(parseInt(price.value))) {
+            errorarea.textContent = "Nem lehet 1 FT-nál kevesebbért adni";
+        }
+        else if (heightcheck(parseInt(height.value))) {
+            errorarea.textContent = "Nem lehet 20 cm-nél kisebb a szobor";
+        }
     }
 }
+(_a = document.getElementById('submit')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', checkAll);
